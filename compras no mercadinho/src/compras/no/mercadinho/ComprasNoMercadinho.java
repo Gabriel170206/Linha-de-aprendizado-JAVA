@@ -11,8 +11,9 @@ public class ComprasNoMercadinho {
         *   Na seção de alimentos ele queria comprar um biscoito recheado, ele tinha três opções que eram "Chocodelicia", "Macaquito" e "Tranqueiras". 
         *   Respectivamente os preços de cada um eram de R$ 7,50 ; R$ 8,99 ; R$ 6,49 .
         */
-        System.out.println("há um produto limitado em promoção, são três biscoitos recheados ");
-        Scanner compraNoMercado = new Scanner(System.in);
+        
+        System.out.println("há um produto limitado em promoção, são três biscoitos recheados limitados, escolha dentre 0 e 4. ");
+       Scanner compraNoMercado = new Scanner(System.in);
             String[] produtosAlimento = new String[] {"Escolha a opção dentre zero e quatro ", "Chocodelicia", "Macaquito", "Tranqueiras"};
             double[] valorProdutodo = new double[] {7.50 , 8.99 , 6.49};
             int escolhaDoProduto = compraNoMercado.nextInt();
@@ -34,7 +35,11 @@ public class ComprasNoMercadinho {
         String possivelCompra = compraNoMercado.next();
         
         if("s".equals(possivelCompra) || "S".equals(possivelCompra)|| "sim".equals(possivelCompra) || "SIM".equals(possivelCompra)) {
-            System.out.println("tu comprou! Obrigado.");
+            System.out.println("você então comprou! Obrigado.");
+            
+        }
+        else{
+            System.out.println("Então por favor escolha denovo!");
         }
         
         
