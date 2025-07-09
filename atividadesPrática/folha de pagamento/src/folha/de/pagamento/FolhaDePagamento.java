@@ -12,9 +12,9 @@ public class FolhaDePagamento {
             System.out.print("Diga a quantia de horas que você trabalha no mês! ");
                 double horasTrabalhadasPorMes = folhaDePagamento.nextDouble();
         folhaDePagamento.close();
-            double salarioBruto = salarioPorHora * horasTrabalhadasPorMes;
-            double FGTS = (11.0/100.0) * salarioBruto;
-            double INSS = (10.0/100.0) * salarioBruto;
+        double salarioBruto = salarioPorHora * horasTrabalhadasPorMes;
+        double FGTS = (11.0/100.0) * salarioBruto;
+        double INSS = (10.0/100.0) * salarioBruto;
         System.out.println("Então você ganha um pagamento de (R$ "+salarioPorHora+") por mês e você trabalha ("+horasTrabalhadasPorMes+")horas ao mês, então seu salario bruto é de (R$ "+ salarioBruto+")");
         if(salarioBruto <= 900.0) {
             System.out.println("Como seu salario é  de (R$ "+salarioBruto+")você está isento de impostos!");
