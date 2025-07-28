@@ -3,24 +3,23 @@ package login;
 import java.util.Scanner;
 
 public class Login {
-/**
- * Faça um programa que leia um nome de usuário e a sua senha e não aceite a senha igual ao nome do usuário, mostrando uma mensagem de erro e voltando a pedir as informações, além de tudo, faça com o usuário acesse sua conta cadastrada.
+/*
+ * Faça um programa que leia um nome de usuário e a sua senha e não aceite a senha igual ao nome do usuário, mostrando uma mensagem de erro e voltando a pedir as informações,
+ * além de tudo, faça com o usuário acesse sua conta cadastrada.
  */
     public static void main(String[] args) {
         Scanner loginUser = new Scanner(System.in);
             System.out.println("Bem vindo ao site simples de fulano!");
             System.out.println("Deseja criar um cadastro para este site?");
-            String confirmCreateAccount = loginUser.next();     //O User confirma se quer criar uma conta.
-            if ( "S".equals(confirmCreateAccount) || "s".equals(confirmCreateAccount) || "SIM".equals(confirmCreateAccount) || "sim".equals(confirmCreateAccount) || "Sim".equals(confirmCreateAccount) || "sIM".equals(confirmCreateAccount) ) {
+            String confirmCreateAccount = loginUser.next();     
+            if ( "S".equalsIgnoreCase(confirmCreateAccount) || "SIM".equalsIgnoreCase(confirmCreateAccount) ) {
                 String UserName = "";   //Nome de Usuário vago
                 String UserPassword = "";   //Senha de Usuário vaga
-                while ( ("".equals(UserName) || "".equals(UserPassword) )   ){ //Se o nome ou senha não for preenchida, que repita a estrutura até que sejam.
+               do while ( ("".equals(UserName) || "".equals(UserPassword) )   ){ //Se o nome ou senha não for preenchida, que repita a estrutura até que sejam.
                     while ( (UserPassword.equals(UserName)) ) { //Se o nome e senha for iguais, que repita a estrutura até q não sejam.
-                        System.out.print("Crie um nome de usuário!");
-                        System.out.println("O nome de usuário não pode conter espaços!");
+                        System.out.print("Crie um nome de usuário! \nO nome de usuário não pode conter espaços!");
                         UserName = loginUser.next();
-                        System.out.print("Crie uma senha!");
-                        System.out.println("A senha não pode conter espaços!");
+                        System.out.print("Crie uma senha! \nA senha não pode conter espaços!");
                         UserPassword = loginUser.next();
                         
                         if(UserPassword.equals(UserName)){
@@ -31,10 +30,10 @@ public class Login {
                 }
                 System.out.println("Deseja acessar sua conta?");
                 String confirmAcessAccount= loginUser.next();
-                if ( "S".equals(confirmAcessAccount) || "s".equals(confirmAcessAccount) || "SIM".equals(confirmAcessAccount) || "sim".equals(confirmAcessAccount) || "Sim".equals(confirmAcessAccount) || "sIM".equals(confirmAcessAccount) ) {
+            if ( "S".equalsIgnoreCase(confirmAcessAccount) || "SIM".equalsIgnoreCase(confirmAcessAccount) ) {
                     String loginUserName = "";
                     String loginUserPassword = "";
-                    while(!loginUserName.equals(UserName) || !loginUserPassword.equals(UserPassword) ){
+                   do while(!loginUserName.equals(UserName) || !loginUserPassword.equals(UserPassword) ){
                         System.out.println("Qual seu nome de usuário?");
                         loginUserName= loginUser.next();
                         System.out.println("Qual sua senha?");
